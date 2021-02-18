@@ -9,7 +9,7 @@ data "aws_acm_certificate" "vsdev1_de_certificate_us-east"{
 }
 
 resource "aws_s3_bucket" "appsyncmasterclass-frontend" {
-  bucket = "appsyncmasterclass-frontend.vsdev1.de"
+  bucket = var.s3bucket_name
   acl = "public-read" # TODO: only cloudfront shoud be allowed to access this bucket
   website {
     index_document = "index.html"
