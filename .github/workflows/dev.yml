@@ -28,7 +28,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: dist
-        path: dist
+        path: dist/
 
   terraform-apply:
     runs-on: ubuntu-latest
@@ -85,7 +85,7 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: dist
-        path: dist
+        path: dist/
 
     - name: Configure AWS credentials from ci-user account
       uses: aws-actions/configure-aws-credentials@v1
