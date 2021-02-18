@@ -15,3 +15,7 @@ terraform {
     dynamodb_table = "terraform-state-lock"
   }
 }
+
+variable "s3bucket_name" {
+  type = string
+}
