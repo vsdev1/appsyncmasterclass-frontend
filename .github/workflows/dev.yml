@@ -28,7 +28,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: dist
-        path: dist
+        path: dist/**
 
   terraform-apply:
     runs-on: ubuntu-latest
@@ -45,6 +45,11 @@ jobs:
     - uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 0.14.3
+
+    - name: terraform init
+      run: |
+        cd terraform
+        terraform init
 
     - name: terraform apply
       run: terraform apply -auto-approve
@@ -64,7 +69,7 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: dist
-        path: dist
+        path: dist/**
 
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
