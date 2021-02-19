@@ -13,8 +13,7 @@ Amplify.configure({
   }
 })
 
-// You can get the current config object
-const currentConfig = Auth.configure();
+Auth.configure();
 
 const myAppConfig = {
   'aws_appsync_graphqlEndpoint': process.env.VUE_APP_AWS_APPSYNC_GRAPHQL_ENDPOINT,
