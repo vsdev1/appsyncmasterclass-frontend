@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './assets/tailwind.css'
-import Amplify from 'aws-amplify'
+import Amplify, { Auth } from 'aws-amplify'
 import '@aws-amplify/ui-vue'
 
 Amplify.configure({
