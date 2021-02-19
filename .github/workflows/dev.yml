@@ -71,7 +71,9 @@ jobs:
         terraform init
 
     - name: terraform apply
-      run: terraform apply -auto-approve
+      run: |
+        cd terraform
+        terraform apply -auto-approve
 
   deploy:
     needs: build # for testing until terraform-apply works
